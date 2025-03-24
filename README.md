@@ -26,3 +26,20 @@ Deberas de realizar el diseño proporcionado en el vídeo eligiendo las imágene
 - La prueba debe completarse en un máximo de 3 horas. No se aceptarán entregas después de este plazo.
 - La entrega final se notificará a través del correo xxx@xxx.com, confirmando la finalización y la correcta entrega del trabajo.
 
+
+
+```html
+        <li class="brandBox">
+            <h3 class="brandName">Toyota</h3>
+            <small class="subName">X Cross</small>
+        </li>
+        <li class="brandBox">
+            <h3 class="brandName">Zara</h3>
+            <small class="subName">Drops</small>
+        </li>
+        <li class="brandBox">
+            <h3 class="brandName">Pandora</h3>
+            <small class="subName">Game of Thrones</small>
+        </li>
+
+```

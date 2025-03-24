@@ -13,9 +13,17 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./js/script.js"></script>
+    <!-- <script defer src="./js/script.js"></script>  -->
 
-    
+    <style>
+        body {
+            background-color: #0f0f0f;
+            position: relative;
+
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -23,76 +31,88 @@
 
     <ul class="menuBrands">
 
-        <li class="brandBox">
+        <li class="brandBox" data-index="0">
             <h3 class="brandName">Burberry</h3>
             <small class="subName">"London in Love"</small>
-          
+
         </li>
-        <li class="brandBox">
+        <li class="brandBox" data-index="1">
             <h3 class="brandName">Cupra</h3>
             <small class="subName">Formentor</small>
         </li>
-        <li class="brandBox">
+        <li class="brandBox" data-index="2">
             <h3 class="brandName">Estrella Galicia</h3>
             <small class="subName">Desde 1906</small>
         </li>
-        <li class="brandBox">
+        <li class="brandBox" data-index="3">
             <h3 class="brandName">Apple</h3>
             <small class="subName">“Someday”</small>
         </li>
-        <li class="brandBox">
+        <li class="brandBox" data-index="4">
             <h3 class="brandName">Saint Laurent</h3>
             <small class="subName">WOMEN'S FALL 24</small>
         </li>
-        <li class="brandBox">
+        <li class="brandBox" data-index="5">
             <h3 class="brandName">Meller</h3>
             <small class="subName">X Awakenings</small>
         </li>
-        <li class="brandBox">
+
+        <li class="brandBox" data-index="6">
             <h3 class="brandName">Toyota</h3>
             <small class="subName">X Cross</small>
         </li>
-        <li class="brandBox">
+        <li class="brandBox" data-index="7">
             <h3 class="brandName">Zara</h3>
-            <small class="subName">Drops</small>
+            <small class="subName">Ski Collection</small>
         </li>
-        <li class="brandBox">
+        <li class="brandBox" data-index="8">
             <h3 class="brandName">Pandora</h3>
             <small class="subName">Game of Thrones</small>
         </li>
-
     </ul>
+    
+    <div class="imageList">
 
-    <ul class="imageList">
-        <li>
-            <img id="1" class="backImage activel" src="./img/burberry.webp" alt="campaña burberry" loading="lazy" >
-        </li>
+        <img data-index="0" class="backImage" src="./img/burberry.webp" alt="campaña burberry" loading="lazy">
+        <img data-index="1" class="backImage" src="./img/cupra.jpg" alt="formentor" loading="lazy">
+        <img data-index="2" class="backImage" src="./img/3-estrella galicia.webp" alt="estrella galicia" loading="lazy">
+        <img data-index="3" class="backImage" src="./img/Apple.jpg" alt="apple 16 pro" loading="lazy">
+        <img data-index="4" class="backImage" src="./img/ysl-dua-lipa-2.webp" alt="ysl" loading="lazy">
+        <img data-index="5" class="backImage" src="./img/awakening.webp" alt="meller" loading="lazy">
+        <img data-index="6" class="backImage" src="./img/toyota.jpg" alt="toyota" loading="lazy">
+        <img data-index="7" class="backImage" src="./img/zara.webp" alt="zara" loading="lazy">
 
-        <li>
-            <img id="2" class="backImage" src="./img/cupra.jpg" alt="formentor" loading="lazy" >
-        </li>
+    </div>
 
-        <li>
-            <img id="3" class="backImage" src="./img/3-estrella galicia.webp" alt="estrella galicia" loading="lazy" >
-        </li>
-
-        <li>
-            <img id="4" class="backImage" src="./img/Apple.jpg" alt="apple 16 pro" loading="lazy" >
-        </li>
-
-        <li>
-            <img id="5" class="backImage" src="./img/ysl-dua-lipa-2.webp" alt="apple 16 pro" loading="lazy" >
-        </li>
-    </ul>
 
 
     <script>
+
         const hoverBrands = document.querySelectorAll(".brandBox");
-        const imagenes = document.querySelectorAll(".backImage");
+        const images = document.querySelectorAll(".backImage");
 
-        
+        hoverBrands.forEach((brand, i) => {
+            brand.addEventListener("mouseover", () => {
+                const index = brand.dataset.index;
 
-        
+                // Primero, removemos la clase "active" de todas las imágenes
+                images.forEach(image => image.classList.remove("active"));
+
+                // Luego, activamos la imagen correspondiente
+                const selectedImage = document.querySelector(`.backImage[data-index="${index}"]`);
+                if (selectedImage) {
+                    selectedImage.classList.add("active");
+                }
+            });
+            // Evento "mouseout" para ocultar todas las imágenes cuando el ratón sale del área de la marca
+            brand.addEventListener("mouseout", () => {
+                images.forEach(image => image.classList.remove("active"));
+            });
+        });
+
+
+
+
     </script>
 
 
