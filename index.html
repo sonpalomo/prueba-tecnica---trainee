@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <script defer src="./js/script.js"></script>  -->
+   <script defer src="./js/script.js"></script> 
 
     <style>
         body {
@@ -70,7 +70,7 @@
             <small class="subName">Game of Thrones</small>
         </li>
     </ul>
-    
+
     <div class="imageList">
 
         <img data-index="0" class="backImage" src="./img/burberry.webp" alt="campaña burberry" loading="lazy">
@@ -86,34 +86,6 @@
 
 
 
-    <script>
-
-        const hoverBrands = document.querySelectorAll(".brandBox");
-        const images = document.querySelectorAll(".backImage");
-
-        hoverBrands.forEach((brand, i) => {
-            brand.addEventListener("mouseover", () => {
-                const index = brand.dataset.index;
-
-                // Primero, removemos la clase "active" de todas las imágenes
-                images.forEach(image => image.classList.remove("active"));
-
-                // Luego, activamos la imagen correspondiente
-                const selectedImage = document.querySelector(`.backImage[data-index="${index}"]`);
-                if (selectedImage) {
-                    selectedImage.classList.add("active");
-                }
-            });
-            // Evento "mouseout" para ocultar todas las imágenes cuando el ratón sale del área de la marca
-            brand.addEventListener("mouseout", () => {
-                images.forEach(image => image.classList.remove("active"));
-            });
-        });
-
-
-
-
-    </script>
 
 
 </body>
