@@ -28,18 +28,3 @@ Deberas de realizar el diseño proporcionado en el vídeo eligiendo las imágene
 
 
 
-```html
-        <li class="brandBox">
-            <h3 class="brandName">Toyota</h3>
-            <small class="subName">X Cross</small>
-        </li>
-        <li class="brandBox">
-            <h3 class="brandName">Zara</h3>
-            <small class="subName">Drops</small>
-        </li>
-        <li class="brandBox">
-            <h3 class="brandName">Pandora</h3>
-            <small class="subName">Game of Thrones</small>
-        </li>
-
-```
